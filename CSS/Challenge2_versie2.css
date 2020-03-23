@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*****************************************************Mobiele versie/ kleinste versie***********************************************/ 
+body{
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-size: 1.0em;
+    font-family: Orbitron;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+#grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "clock"
+        "datum"
+        "tekst"
+        "illustratie"
+        "huis";
+}
+
+#clock{
+    margin: 0 auto;
+    margin-top: 60px;
+    grid-area: clock;
+    color: #ffffff;
+    font-family: Orbitron;
+    font-size: 2.5em;
+    letter-spacing: 7px;
+}
+
+#datum{
+    grid-area: datum;
+    margin: 0 auto;
+    font-family: Orbitron;
+    font-size: 1.0em;
+}
+#tekst{                             
+    margin: 0 auto;
+    margin-top: 10px;
+    grid-area: tekst;
+    font-size: 1.5em;
+    font-family: 'Chakra Petch';
+}
+
+.illustratie{
+    display: none;
+    grid-area: illustratie;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.zonMaan{
+    display: none;
+    grid-area: zon;
+}
+.huis{
+    margin: 0 auto;
+    margin-top: 130px;
+    grid-area: huis;
+}
+#gras{
+    background-color: #137000;
+    margin-top: -50px;
+    flex-grow: 1;
+    z-index: -1;
+}
+
+.astronaut{
+    animation-name: astronaut;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+}
+@keyframes astronaut {                                  
+   0% { 
+      transform: rotate(-15deg);
+  }
+    
+  50% { 
+      transform: rotate(2deg);
+  }
+    100%{
+        transform: rotate(-15deg);
+    }
+} 
+
+
+.wekker{
+    animation-name: wekker;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+}
+@keyframes wekker {
+   0% { 
+      transform: rotate(-20deg);
+  }
+    
+  50% { 
+      transform: rotate(20deg);
+  }
+    100%{
+        transform: rotate(-20deg);
+    }
+} 
+
+
+.radio{
+    animation-name: radio;
+    animation-iteration-count: infinite;
+    animation-duration: 1.8s;
+}
+@keyframes radio {                         
+   0% { 
+      transform: scale(0.8);
+  }
+    
+  50% { 
+      transform: scale(1.2);
+  }
+    100%{
+       transform: scale(0.8);
+    }
+} 
+
+.sterren{
+    animation-name: sterren;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}
+@keyframes sterren {                          
+   0% { 
+      transform: scale(1) rotate(-3deg);
+       
+  }
+    
+  50% { 
+     transform: scale(0.8) rotate(3deg);
+  }
+    100%{
+      transform: scale(1) rotate(-3deg);
+        
+    }
+} 
+
+
+
+
+
+
+/*************************************************einde mobiele versie/ kleinste versie********************************************/
+
+
+
+
+
+/*************************************************Tablet versie********************************************************************/
+
+@media only screen and (min-width: 720px) and (max-width: 999px){
+    #clock{
+        margin-top: 20px;
+    }
+    .illustratie{
+        display: block;
+        margin-top: 30px;
+    }
+    
+    .huis{
+        margin-top: 40px;
+    }
+}
+     
+
+
+/***************************************************einde tablet versie**************************************************************/
+
+
+
+
+
+/***********************************************desktop klein*************************************************************************/
+@media only screen and (min-width: 999px) and (max-width:1299px){
+    #grid-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "clock        huis"
+            "datum        huis"
+            "tekst        huis"
+            "illustratie  huis";    
+    }
+    #clock{
+        font-size: 3em;
+    }
+    #datum{
+        font-size: 1.2em;
+        margin-top: -10px;
+    }
+    #tekst{
+        font-size: 1.8em;
+        margin-top: -10px;
+    }
+    .illustratie{
+        display: block;
+        margin-bottom: 100px;
+    }
+    .huis{
+        margin-top: 280px;
+    }
+    
+       
+   
+}
+
+
+
+/**********************************************einde desktop klein*****************************************************************/
+
+
+
+
+
+/***********************************************desktop groot*********************************************************************/
+@media only screen and (min-width: 1300px){
+    #grid-container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "clock        zon"
+            "datum        zon"
+            "tekst        huis"
+            "illustratie  huis";  
+           
+    }
+    #clock{
+        font-size: 3.4em;
+    }
+    #datum{
+        font-size: 1.4em;
+        margin-top: -20px;
+    }
+    #tekst{
+        font-size: 2.0em;
+        margin-top: -10px;
+    }
+    .illustratie{
+        display: block;
+        margin-bottom: 100px;
+    }
+    .zonMaan{
+        display: block;
+        margin-top: 140px;
+        margin-left: 70%;
+    }
+    .huis{
+        margin-top: 70px;
+    }
+   
+    
+        
+}
